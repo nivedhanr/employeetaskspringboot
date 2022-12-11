@@ -6,12 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="registration")
+@Table(name="employee")
 public class Userregistration {
 
     @Id
     @GeneratedValue
     private int id;
+    private int empcode;
     private String name;
 
     private String address;
@@ -20,19 +21,21 @@ public class Userregistration {
 
     private String email;
 
+    private String department;
     private String password;
-
     private String confirmpass;
 
     public Userregistration() {
     }
 
-    public Userregistration(int id, String name, String address, String phn, String email, String password, String confirmpass) {
+    public Userregistration(int id, int empcode, String name, String address, String phn, String email, String department, String password, String confirmpass) {
         this.id = id;
+        this.empcode = empcode;
         this.name = name;
         this.address = address;
         this.phn = phn;
         this.email = email;
+        this.department = department;
         this.password = password;
         this.confirmpass = confirmpass;
     }
@@ -43,6 +46,14 @@ public class Userregistration {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getEmpcode() {
+        return empcode;
+    }
+
+    public void setEmpcode(int empcode) {
+        this.empcode = empcode;
     }
 
     public String getName() {
@@ -75,6 +86,14 @@ public class Userregistration {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getPassword() {
